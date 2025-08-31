@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 const Contact: React.FC = () => {
   const { t } = useTranslation();
   const [ref, inView] = useInView({
-    triggerOnce: false,
+    triggerOnce: true,
     threshold: 0.2,
   });
 

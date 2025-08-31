@@ -101,22 +101,24 @@ const Header: React.FC = () => {
         scrolled ? 'pointer-events-none' : ''
       }`}
     >
-      {/* conteneur centré ; devient “pilule” en desktop quand scrolled */}
+      {/* conteneur centré ; devient "pilule" en desktop quand scrolled */}
       <div
         className={[
           'mx-auto px-3 transition-all duration-300',
           shouldShowFloating ? 'md:max-w-4xl md:mt-6' : 'md:max-w-7xl',
           'w-full',
+          // Centrage de la navigation flottante
+          shouldShowFloating ? 'md:mx-auto' : '',
         ].join(' ')}
       >
         <nav
           className={[
             'pointer-events-auto', // réactive les clics
             'px-4 py-3', // padding nav
-            // style normal en haut de page (transparent)
+            'transition-all duration-300',
             shouldShowFloating
-              ? // style “pilule” uniquement en desktop
-                'md:rounded-full md:bg-slate-900/80 md:backdrop-blur md:shadow-lg'
+              ? // style "pilule" uniquement en desktop, utiliser backdrop-blur-md si on veut plus de lisibilite
+                'md:rounded-full md:bg-slate-900/80 md:backdrop-blur md:shadow-xl md:border md:border-slate-700/50'
               : '',
           ].join(' ')}
         >

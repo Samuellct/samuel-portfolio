@@ -6,7 +6,7 @@ import { PenTool, Mountain, Code, Trophy } from 'lucide-react';
 
 const Blog: React.FC = () => {
   const [ref, inView] = useInView({
-    triggerOnce: false,
+    triggerOnce: true,
     threshold: 0.2,
   });
   const { t } = useTranslation();
